@@ -9,12 +9,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PHP Todo List JSON</title>
+
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         
         <div id="app">
 
-            {{todos}}
+            <ul>
+                <li v-for="(todo, index) in todos">
+                    <span :class="{
+                                    done: todo.done
+                                }">
+                        {{index + 1}}. {{todo.taskName}}
+                    </span>
+                </li>
+            </ul>
 
         </div>
 
